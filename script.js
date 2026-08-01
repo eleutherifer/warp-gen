@@ -51,14 +51,14 @@ function generateRandomEndpoint() {
     const serverMap = {
 		'ltePL': 'tel.pl.tribukvy.ltd',      // Польша LTE
 		'lteFL': 'tel.fi.tribukvy.ltd',   	 // Финляндия LTE
+		'lteUS': 'tel.de.tribukvy.ltd',  	 // США LTE		
 		'PL': 'pl.tribukvy.ltd',   		  	 // Польша
 		'DE': 'de.tribukvy.ltd',    	  	 // Германия
 		'RU': 'ru0.tribukvy.ltd',  		  	 // Россия
-		'EE': 'ee.tribukvy.ltd',    	 	 // Эстония ---
+		'EE': 'ee.tribukvy.ltd',    	 	 // Эстония
         'NL': 'nl.tribukvy.ltd',  		 	 // Нидерланды
         'FL': 'fi.tribukvy.ltd',  		 	 // Финляндия
-		'LV': 'lv.tribukvy.ltd',  		 	 // Латвия
-		'US': 'usa.tribukvy.ltd'  		 	 // США ---
+		'LV': 'lv.tribukvy.ltd' 		 	 // Латвия
     };
     
     const endpoint = serverMap[selectedServer] || 'pl.tribukvy.ltd';
