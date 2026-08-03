@@ -600,11 +600,19 @@ rules:
   <<: [ *warp-common, *awg ]
   server: de.tribukvy.ltd
   port: 500
+- name: "🇪🇪 EE"
+  <<: [ *warp-common, *awg ]
+  server: ee.tribukvy.ltd
+  port: 500  
   
 - name: "[LTE] 🇵🇱 PL"
   <<: [ *warp-common, *awg ]
   server: tel.pl.tribukvy.ltd
   port: 500
+- name: "[LTE] 🇺🇸 USA"
+  <<: [ *warp-common, *awg ]
+  server: tel.de.tribukvy.ltd
+  port: 500  
 - name: "[LTE] 🇫🇮 FI"
   <<: [ *warp-common, *awg ]
   server: tel.fi.tribukvy.ltd
@@ -624,8 +632,10 @@ rules:
     - "🇷🇺 RU"
     - "🇱🇻 LV"
     - "🇩🇪 DE"
+	- "🇪🇪 EE"
     - "[LTE] 🇵🇱 PL"
     - "[LTE] 🇫🇮 FI"
+	- "[LTE] 🇺🇸 USA"
   url: 'http://speed.cloudflare.com/'
   interval: 300
 rules:
@@ -784,14 +794,22 @@ proxies:
 - name: "🇩🇪 DE"
   <<: [ *warp-common, *awg ]
   server: de.tribukvy.ltd
+  port: 500
+- name: "🇪🇪 EE"
+  <<: [ *warp-common, *awg ]
+  server: ee.tribukvy.ltd
   port: 500  
   
 - name: "[LTE] 🇵🇱 PL"
-  <<: [ *warp-common ]
+  <<: [ *warp-common, *awg ]
   server: tel.pl.tribukvy.ltd
   port: 500
+- name: "[LTE] 🇺🇸 USA"
+  <<: [ *warp-common, *awg ]
+  server: tel.de.tribukvy.ltd
+  port: 500  
 - name: "[LTE] 🇫🇮 FI"
-  <<: [ *warp-common ]
+  <<: [ *warp-common, *awg ]
   server: tel.fi.tribukvy.ltd
   port: 500`;
 			proxyg = `proxy-groups:
@@ -807,8 +825,10 @@ proxies:
     - "🇷🇺 RU"
     - "🇱🇻 LV"
     - "🇩🇪 DE"
+	- "🇪🇪 EE"
     - "[LTE] 🇵🇱 PL"
     - "[LTE] 🇫🇮 FI"
+	- "[LTE] 🇺🇸 USA"
   url: 'http://speed.cloudflare.com/'
   interval: 300
 rules:
@@ -946,6 +966,10 @@ document.getElementById('telegramButton').onclick = function() {
 
 document.getElementById('projectsButton').onclick = function() {
     window.location.href = 'https://my-other-projects.vercel.app/';
+}
+
+document.getElementById('adButton').onclick = function() {
+    window.open('https://nullbooster.com/', '_blank', 'noopener');
 }
 
 document.getElementById('promoButton').onclick = function() {
