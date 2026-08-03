@@ -792,24 +792,24 @@ proxies:
   server: lv.tribukvy.ltd
   port: 500
 - name: "🇩🇪 DE"
-  <<: [ *warp-common, *awg ]
+  <<: [ *warp-common ]
   server: de.tribukvy.ltd
   port: 500
 - name: "🇪🇪 EE"
-  <<: [ *warp-common, *awg ]
+  <<: [ *warp-common ]
   server: ee.tribukvy.ltd
   port: 500  
   
 - name: "[LTE] 🇵🇱 PL"
-  <<: [ *warp-common, *awg ]
+  <<: [ *warp-common ]
   server: tel.pl.tribukvy.ltd
   port: 500
 - name: "[LTE] 🇺🇸 USA"
-  <<: [ *warp-common, *awg ]
+  <<: [ *warp-common ]
   server: tel.de.tribukvy.ltd
   port: 500  
 - name: "[LTE] 🇫🇮 FI"
-  <<: [ *warp-common, *awg ]
+  <<: [ *warp-common ]
   server: tel.fi.tribukvy.ltd
   port: 500`;
 			proxyg = `proxy-groups:
