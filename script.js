@@ -87,7 +87,8 @@ function getConfigPrefix() {
     
     const serverPrefixMap = {
         'ltePL': 'LTEp',
-		'lteFL': 'LTEf',	
+		'lteFL': 'LTEf',
+		'lteUS': 'LTEu',
 		'PL': 'pl',
         'DE': 'de',
         'RU': 'ru',
