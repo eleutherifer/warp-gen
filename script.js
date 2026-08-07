@@ -52,14 +52,14 @@ function generateRandomEndpoint() {
     const serverMap = {
 		'ltePL': 'tel.pl.tribukvy.ltd',      // Польша LTE
 		'lteFL': 'tel.fi.tribukvy.ltd',   	 // Финляндия LTE
+		'lteUS': 'tel.de.tribukvy.ltd',  	 // США LTE		
 		'PL': 'pl.tribukvy.ltd',   		  	 // Польша
 		'DE': 'de.tribukvy.ltd',    	  	 // Германия
 		'RU': 'ru0.tribukvy.ltd',  		  	 // Россия
-		'EE': 'ee.tribukvy.ltd',    	 	 // Эстония ---
+		'EE': 'ee.tribukvy.ltd',    	 	 // Эстония
         'NL': 'nl.tribukvy.ltd',  		 	 // Нидерланды
         'FL': 'fi.tribukvy.ltd',  		 	 // Финляндия
-		'LV': 'lv.tribukvy.ltd',  		 	 // Латвия
-		'US': 'usa.tribukvy.ltd'  		 	 // США ---
+		'LV': 'lv.tribukvy.ltd' 		 	 // Латвия
     };
     
     const endpoint = serverMap[selectedServer] || 'pl.tribukvy.ltd';
@@ -88,7 +88,8 @@ function getConfigPrefix() {
     
     const serverPrefixMap = {
         'ltePL': 'LTEp',
-		'lteFL': 'LTEf',	
+		'lteFL': 'LTEf',
+		'lteUS': 'LTEu',
 		'PL': 'pl',
         'DE': 'de',
         'RU': 'ru',
@@ -603,11 +604,19 @@ rules:
   <<: [ *warp-common, *awg ]
   server: de.tribukvy.ltd
   port: 500
+- name: "🇪🇪 EE"
+  <<: [ *warp-common, *awg ]
+  server: ee.tribukvy.ltd
+  port: 500  
   
 - name: "[LTE] 🇵🇱 PL"
   <<: [ *warp-common, *awg ]
   server: tel.pl.tribukvy.ltd
   port: 500
+- name: "[LTE] 🇺🇸 USA"
+  <<: [ *warp-common, *awg ]
+  server: tel.de.tribukvy.ltd
+  port: 500  
 - name: "[LTE] 🇫🇮 FI"
   <<: [ *warp-common, *awg ]
   server: tel.fi.tribukvy.ltd
@@ -627,8 +636,10 @@ rules:
     - "🇷🇺 RU"
     - "🇱🇻 LV"
     - "🇩🇪 DE"
+	- "🇪🇪 EE"
     - "[LTE] 🇵🇱 PL"
     - "[LTE] 🇫🇮 FI"
+	- "[LTE] 🇺🇸 USA"
   url: 'http://speed.cloudflare.com/'
   interval: 300
 rules:
@@ -795,14 +806,22 @@ proxies:
   server: lv.tribukvy.ltd
   port: 500
 - name: "🇩🇪 DE"
-  <<: [ *warp-common, *awg ]
+  <<: [ *warp-common ]
   server: de.tribukvy.ltd
+  port: 500
+- name: "🇪🇪 EE"
+  <<: [ *warp-common ]
+  server: ee.tribukvy.ltd
   port: 500  
   
 - name: "[LTE] 🇵🇱 PL"
   <<: [ *warp-common ]
   server: tel.pl.tribukvy.ltd
   port: 500
+- name: "[LTE] 🇺🇸 USA"
+  <<: [ *warp-common ]
+  server: tel.de.tribukvy.ltd
+  port: 500  
 - name: "[LTE] 🇫🇮 FI"
   <<: [ *warp-common ]
   server: tel.fi.tribukvy.ltd
@@ -820,8 +839,10 @@ proxies:
     - "🇷🇺 RU"
     - "🇱🇻 LV"
     - "🇩🇪 DE"
+	- "🇪🇪 EE"
     - "[LTE] 🇵🇱 PL"
     - "[LTE] 🇫🇮 FI"
+	- "[LTE] 🇺🇸 USA"
   url: 'http://speed.cloudflare.com/'
   interval: 300
 rules:
@@ -959,6 +980,10 @@ document.getElementById('telegramButton').onclick = function() {
 
 document.getElementById('projectsButton').onclick = function() {
     window.location.href = 'https://my-other-projects.vercel.app/';
+}
+
+document.getElementById('adButton').onclick = function() {
+    window.open('https://nullbooster.com/', '_blank', 'noopener');
 }
 
 document.getElementById('promoButton').onclick = function() {

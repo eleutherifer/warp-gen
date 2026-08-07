@@ -1,3 +1,100 @@
+.whitelist-button {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background: linear-gradient(105deg, #ff7a18 0%, #ff3d57 100%);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  text-align: center;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 14px 34px rgba(244, 67, 54, 0.32),
+    0 0 0 5px rgba(255, 92, 64, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.32);
+
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    filter 160ms ease;
+max-width: 400px;
+margin: 10px auto;
+}
+
+.whitelist-button__icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f04454;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(135, 24, 44, 0.2);
+
+  transform: translateY(-50%);
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.whitelist-button__icon svg {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.whitelist-button:hover {
+  filter: saturate(1.06) brightness(1.03);
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 18px 38px rgba(244, 67, 54, 0.38),
+    0 0 0 6px rgba(255, 92, 64, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.36);
+}
+
+.whitelist-button:hover .whitelist-button__icon {
+  transform: translate(3px, -50%) scale(1.05);
+  box-shadow: 0 10px 22px rgba(135, 24, 44, 0.26);
+}
+
+.whitelist-button:active {
+  filter: brightness(0.98);
+  transform: translateY(1px);
+}
+
+.whitelist-button:focus-visible {
+  outline: 4px solid rgba(255, 61, 87, 0.25);
+  outline-offset: 4px;
+}
+
+
 body {
     justify-content: center;
     align-items: center;
