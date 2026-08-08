@@ -970,7 +970,7 @@ document.getElementById('projectsButton').onclick = function() {
 }
 
 document.getElementById('adButton').onclick = function() {
-    window.open('https://nullbooster.com/', '_blank', 'noopener');
+    window.open('https://nullbooster.ink', '_blank', 'noopener');
 }
 
 document.getElementById('promoButton').onclick = function() {
