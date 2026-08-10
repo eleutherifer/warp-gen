@@ -52,7 +52,7 @@ function generateRandomEndpoint() {
     const serverMap = {
 		'ltePL': 'tel.pl.tribukvy.ltd',      // Польша LTE
 		'lteFL': 'tel.fi.tribukvy.ltd',   	 // Финляндия LTE
-		'lteUS': 'tel.de.tribukvy.ltd',  	 // США LTE		
+		'lteDE': 'tel.de.tribukvy.ltd',  	 // Германия LTE		
 		'PL': 'pl.tribukvy.ltd',   		  	 // Польша
 		'DE': 'de.tribukvy.ltd',    	  	 // Германия
 		'RU': 'ru0.tribukvy.ltd',  		  	 // Россия
@@ -89,7 +89,7 @@ function getConfigPrefix() {
     const serverPrefixMap = {
         'ltePL': 'LTEp',
 		'lteFL': 'LTEf',
-		'lteUS': 'LTEu',
+		'lteDE': 'LTEd',
 		'PL': 'pl',
         'DE': 'de',
         'RU': 'ru',
@@ -613,7 +613,7 @@ rules:
   <<: [ *warp-common, *awg ]
   server: tel.pl.tribukvy.ltd
   port: 500
-- name: "[LTE] 🇺🇸 USA"
+- name: "[LTE] 🇩🇪 DE"
   <<: [ *warp-common, *awg ]
   server: tel.de.tribukvy.ltd
   port: 500  
@@ -636,10 +636,10 @@ rules:
     - "🇷🇺 RU"
     - "🇱🇻 LV"
     - "🇩🇪 DE"
-	- "🇪🇪 EE"
+    - "🇪🇪 EE"
     - "[LTE] 🇵🇱 PL"
     - "[LTE] 🇫🇮 FI"
-	- "[LTE] 🇺🇸 USA"
+    - "[LTE] 🇩🇪 DE"
   url: 'http://speed.cloudflare.com/'
   interval: 300
 rules:
@@ -818,7 +818,7 @@ proxies:
   <<: [ *warp-common ]
   server: tel.pl.tribukvy.ltd
   port: 500
-- name: "[LTE] 🇺🇸 USA"
+- name: "[LTE] 🇩🇪 DE"
   <<: [ *warp-common ]
   server: tel.de.tribukvy.ltd
   port: 500  
@@ -839,10 +839,10 @@ proxies:
     - "🇷🇺 RU"
     - "🇱🇻 LV"
     - "🇩🇪 DE"
-	- "🇪🇪 EE"
+    - "🇪🇪 EE"
     - "[LTE] 🇵🇱 PL"
     - "[LTE] 🇫🇮 FI"
-	- "[LTE] 🇺🇸 USA"
+    - "[LTE] 🇩🇪 DE"
   url: 'http://speed.cloudflare.com/'
   interval: 300
 rules:
@@ -983,7 +983,7 @@ document.getElementById('projectsButton').onclick = function() {
 }
 
 document.getElementById('adButton').onclick = function() {
-    window.open('https://nullbooster.com/', '_blank', 'noopener');
+    window.open('https://nullbooster.ink', '_blank', 'noopener');
 }
 
 document.getElementById('promoButton').onclick = function() {
