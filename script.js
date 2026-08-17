@@ -983,7 +983,7 @@ document.getElementById('projectsButton').onclick = function() {
 }
 
 document.getElementById('adButton').onclick = function() {
-    window.open('https://nullbooster.ink', '_blank', 'noopener');
+    window.open('https://t.me/AgnosiaVPN_bot', '_blank', 'noopener');
 }
 
 document.getElementById('promoButton').onclick = function() {
