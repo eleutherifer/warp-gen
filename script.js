@@ -970,7 +970,7 @@ document.getElementById('projectsButton').onclick = function() {
 }
 
 document.getElementById('adButton').onclick = function() {
-    window.open('https://t.me/AgnosiaVPN_bot', '_blank', 'noopener');
+    window.location.href = 'https://t.me/AgnosiaVPN_bot'
 }
 
 document.getElementById('promoButton').onclick = function() {
