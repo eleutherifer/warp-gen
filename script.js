@@ -131,9 +131,16 @@ const fetchWithTimeout = async (url, options = {}, timeout = 3000) => {
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), timeout);
     
+    // Объединяем существующие заголовки с заголовком X-Client
+    const headers = {
+        ...options.headers,
+        'X-Client': 'WARP'
+    };
+
     try {
         const response = await fetch(url, {
             ...options,
+            headers,
             signal: controller.signal
         });
         clearTimeout(id);
