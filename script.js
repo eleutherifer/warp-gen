@@ -132,9 +132,15 @@ const fetchWithTimeout = async (url, options = {}, timeout = 3000) => {
     const controller = new AbortController();
     const id = setTimeout(() => controller.abort(), timeout);
     
+    // Оставляем только те заголовки, которые были переданы в параметре options
+    const headers = {
+        ...options.headers
+    };
+
     try {
         const response = await fetch(url, {
             ...options,
+            headers,
             signal: controller.signal
         });
         clearTimeout(id);
@@ -177,7 +183,9 @@ const fetchFullConfig = async () => {
     for (let i = 0; i < endpoints.length; i++) {
         try {
             console.log(`Trying config endpoint: ${i}`);
-            const response = await fetchWithTimeout(endpoints[i]);
+            const response = await fetchWithTimeout(endpoints[i], {
+                headers: { 'X-Client': 'WARP' }
+            });
             
             if (!response.ok) {
                 throw new Error(`Failed to fetch config from ${i}: ${response.status}`);
